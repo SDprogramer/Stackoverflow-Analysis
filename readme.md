@@ -1,24 +1,33 @@
-# Stackoverflow Analysis Guidelines 
+<h1 align="center"> Stackoverflow Analysis Guidelines </h1>
 
-<img src="https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png" align="left" height="100" width="450" >
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+![Stackoverflow Logo](https://stackoverflow.design/assets/img/logos/so/logo-stackoverflow.png)
 
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?)](https://github.com/tterb/atomic-design-ui/blob/master/LICENSEs)
-<img src="https://img.shields.io/github/last-commit/Sanjayviswa/Stackoverflow-Analysis">
-<img src="https://img.shields.io/github/languages/code-size/Sanjayviswa/Stackoverflow-Analysis">
+<div align="center">
+  
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
 
-<!-- TABLE OF CONTENTS -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+
+<a href="https://github.com/recodehive/Stackoverflow-Analysis/stargazers"><img src="https://img.shields.io/github/stars/recodehive/Stackoverflow-Analysis" alt="Stars Badge"/></a>
+<a href="https://github.com/recodehive/Stackoverflow-Analysis/network/members"><img src="https://img.shields.io/github/forks/recodehive/Stackoverflow-Analysis" alt="Forks Badge"/></a>
+<a href="https://github.com/recodehive/Stackoverflow-Analysis/pulls"><img src="https://img.shields.io/github/issues-pr/recodehive/Stackoverflow-Analysis" alt="Pull Requests Badge"/></a>
+<a href="https://github.com/recodehive/Stackoverflow-Analysis/issues"><img src="https://img.shields.io/github/issues/recodehive/Stackoverflow-Analysis" alt="Issues Badge"/></a>
+<a href="https://github.com/recodehive/Stackoverflow-Analysis/graphs/contributors"><img alt="GitHub contributors" src="https://img.shields.io/github/contributors/recodehive/Stackoverflow-Analysis?color=2b9348"></a>
+<a href="https://github.com/recodehive/Stackoverflow-Analysis/blob/master/LICENSE"><img src="https://img.shields.io/github/license/recodehive/Stackoverflow-Analysis?color=2b9348" alt="License Badge"/></a>
+
+
+
+
+[![](https://visitcount.itsvg.in/api?id=gssoc-postman&label=Profile%20Views&color=0&icon=5&pretty=true)](https://visitcount.itsvg.in)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+This is the all in one place for documentation help regarding the postman challenge.
+</div>
 
 ## 👨‍💻 Demo Video 
 
 [Watch the demo video](https://user-images.githubusercontent.com/30715153/168960157-e9448ea4-206c-44c0-bbd5-5e4770c0411f.mp4)
 
-## 👇 Prerequisites
+## 👇 Prerequisites 
 
 Before installation, please ensure you have the following tools installed:
 
@@ -39,17 +48,17 @@ We welcome contributions from all levels of experience. If you think the communi
 
 ## Finding Insights from Stack Overflow Developer Survey
 
+### Objective:
+To perform Analysis on 3 years Stackoverflow dataset to gain insights.
 
-1. Objective: To perform Analysis on 3 years Stackoverflow dataset to gain insights.
-2. Goals:
-   + Analyze the impact of higher education on salary of the surveyed developers.
-   + Investigate the impact of education/experience/responsibilities on gender inequalities.
-   + Examine the impact on participation rates due to different ethnicities.
-   + Determine if there is a difference between men's and women's incomes.
-   + Analyze the increase in popularity of a language in the current year due to developer’s interest in the previous year.
+### Goals:
+- Analyze the impact of higher education on the salary of the surveyed developers.
+- Investigate the impact of education/experience/responsibilities on gender inequalities.
+- Examine the impact on participation rates due to different ethnicities.
+- Determine if there is a difference between men's and women's incomes.
+- Analyze the increase in popularity of a language in the current year due to the developer’s interest in the previous year.
 
 Stack Overflow is a professional community for developers, conducting an annual survey. Analyzing the dataset professionally using modern tools can enable us to answer real-world questions effectively. The dataset covers 275 questions in total.
-
 
 ### Project Goals:
 
@@ -82,9 +91,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 Thanks to all contributors for helping this project grow! 🍻
 
-<a href="https://github.com/sanjay-kv/Stackoverflow-Analysis/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=sanjay-kv/Stackoverflow-Analysis" />
-</a>
+[![Contributors](https://contrib.rocks/image?repo=sanjay-kv/Stackoverflow-Analysis)](https://github.com/sanjay-kv/Stackoverflow-Analysis/graphs/contributors)
 
 ## 🙏 Support
 
@@ -92,4 +99,7 @@ Don't forget to leave a star ⭐️ for this project!
 
 Crafted with ♥ by @sanjay-kv.
 
-Here's a link to the project wiki: https://github.com/tech-hardik/Stackoverflow-Analysis/wiki
+[Back to Top](#stackoverflow-analysis-guidelines)
+
+Here's a link to the project wiki: [Stackoverflow Analysis Wiki](https://github.com/tech-hardik/Stackoverflow-Analysis/wiki)
+
