@@ -9,17 +9,31 @@ import main_analysis as main
 # DATA LOADING
 #######################################
 
-st.set_page_config(layout='wide')
+st.set_page_config(layout='wide') 
+ 
+@st.cache_data # Caching data loading functions
+def load_data(url):
+    return pd.read_csv(url)
 
 # Loading data files from the 'streamlit' directory
-df = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2020.csv')
-df2018 = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2018.csv')
-full_data2018 = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/survey_results_sample_2018.csv')
-full_data2019 = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/survey_results_sample_2019.csv')
-full_df2020 = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/survey_results_sample_2020.csv')
-df2019 = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2019.csv')
-df2021 = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2021.csv')
-df2022 = pd.read_csv('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2022.csv')
+# df = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2020.csv')
+# df2018 = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2018.csv')
+# full_data2018 = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/survey_results_sample_2018.csv')
+# full_data2019 = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/survey_results_sample_2019.csv')
+# full_df2020 = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/survey_results_sample_2020.csv')
+# df2019 = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2019.csv')
+# df2021 = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2021.csv')
+# df2022 = load_data('https://raw.githubusercontent.com/Recode-Hive/Stackoverflow-Analysis/main/streamlit/df2022.csv')
+
+df = load_data('df2020.csv')
+df2018 = load_data('df2018.csv')
+full_data2018 = load_data('survey_results_sample_2018.csv')
+full_data2019 = load_data('survey_results_sample_2019.csv')
+full_df2020 = load_data('survey_results_sample_2020.csv')
+df2019 = load_data('df2019.csv')
+df2021 = load_data('df2021.csv')
+df2022 = load_data('df2022.csv')
+
 
 # Filter the 2020 dataframe
 df2020 = df[df['SalaryUSD'] < 200000]
@@ -109,12 +123,14 @@ short_mapping = {
 }
 df_ai.replace(short_mapping, inplace=True)
 
+@st.cache_data
 def mean_salary(df):
     mean_salary = df[df['SalaryUSD'] <= 1000000]['SalaryUSD'].mean()
     df.loc[df['SalaryUSD'] > 1000000, 'SalaryUSD'] = mean_salary
     return df
 
 # Function to create value count plots for each column
+@st.cache_data
 def plot_value_counts(column_name):
     colors = ['skyblue', 'yellow']
     fig = px.bar(df_ai[column_name].value_counts().reset_index(), x='index', y=column_name, color_discrete_sequence=[random.choice(colors)])
@@ -130,7 +146,7 @@ year = st.sidebar.selectbox('Select Year', ['2018', '2019', '2020', '2021', '202
 
 if year == '2018':
     main.main_analysis(df2018)
-    main.main_analysis_2(df2018)
+    main.main_analysis_2(df2018, year)
 
     visual, analysis = st.columns((3, 1))
     with visual:
@@ -203,7 +219,7 @@ if year == '2018':
 
 elif year == '2019':
     main.main_analysis(df2019)
-    main.main_analysis_2(df2019)
+    main.main_analysis_2(df2019, year)
 
     visual, analysis = st.columns((3, 1))
     with visual:
@@ -222,7 +238,7 @@ elif year == '2019':
 
 elif year == '2020':
     main.main_analysis(df2020)
-    main.main_analysis_2(df2020)
+    main.main_analysis_2(df2020, year)
 
     visual, analysis = st.columns((3, 1))
     with visual:
@@ -241,7 +257,7 @@ elif year == '2020':
 
 elif year == '2021':
     main.main_analysis(df2021)
-    main.common_analysis_2021_2022(df2021)
+    main.common_analysis_2021_2022(df2021, year)
     visual, analysis = st.columns((3, 1))
     with visual:
         fig = func.plot_valuecounts_plotly(df2021,'NEWStuck')
@@ -275,7 +291,7 @@ elif year == '2021':
     
 else:
     main.main_analysis(df2022)
-    main.common_analysis_2021_2022(df2022)
+    main.common_analysis_2021_2022(df2022, year)
 
     fig = func.compare_language_columns_and_plot(df2022, 'OpSysPersonal use', 'OpSysProfessional use')
 
